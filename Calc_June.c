@@ -86,7 +86,7 @@ char* SymbolReturn(char* line, int* n) {
 //char* BracketSearch(double* NumInt, char* SymChar, int size_n, int size_c) {
 
 //}
-//Split Calc into two functions. 1 - what to call, Calc or Bracket search. 2 - The rest
+
 //Calculation function. Works only with 2 (or 3) of the numbers, getting an answer for them and then putting it back into the array
 double Calc(double* NumInt, char* SymChar, int size_n, int size_c) {
 	double num1, num2, num3 = 0, ans = 0;
@@ -138,7 +138,7 @@ double Calc(double* NumInt, char* SymChar, int size_n, int size_c) {
 			size_c--;
 		}
 
-		//When the amount of numebers in the array is 2 or less
+		//When the amount of numbers in the array is 2 or less
 		else {
 			switch (sym) {
 			case('+'):
@@ -207,7 +207,7 @@ void StringChange(char* line) {
 	}
 	else if (i == length)
 		return;
-	//this is an expression, parse it into numbers and symbols, call necessary functions
+	//if this is an expression, parse it into numbers and symbols, call necessary functions
 	else {
 		NumInt = IntStringParse(line, &size_NumInt);
 		SymChar = SymbolReturn(line, &size_SymChar);
@@ -338,7 +338,7 @@ bool FileScan(char* name) {
 }
 
 int main(int argc, char* argv[]) {
-	//Checks for number command line arguments
+	//Checks for number command line arguments. This is done to support input and output into files from cmd
 	if (argc > 2) {
 		printf("ERROR: too many arguments");
 		return 1;
